@@ -1,23 +1,18 @@
-
-                <TextView
-                    android:id="@+id/txt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    />
-
-
- one = findViewById(R.id.txt1);
-        one.setText("Seventh-day\n"+"Adventist Church\n"+"NEWLIFE");
-
-        new Handler().postDelayed(() -> {
-            Intent homeIntent = new Intent(Startup.this, Nav.class);
-            startActivity(homeIntent);
-            //overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            finish();
-        }, SPLASH_TIME_OUT);
+    private static int SPLASH_TIME_OUT = 7000;
+    private static int SPLASH_TIME_OUT2 = 2000;
+    private static int SPLASH_TIME_OUT3 = 5000;
+    Animation _translateAnimation, animFadein;
+    ImageView imgfade;
+    ImageView loading;
+    RelativeLayout relativeLayout;
+    TextView one;
+    private FirebaseAuth mAuth;
+    private TextView fname, lname, uname, mid, created, phone, eemail, emptymail;
+    final String TAG = this.getClass().getName().toUpperCase();
+    public FirebaseDatabase database;
+    public DatabaseReference mDatabase;
+    public String email;
+    public static final String USERS = "The Spotlight";
+    FirebaseAuth auth;
+    private SharedPreferences mPref;
+    private static final String PREF_NAME = "sp_name";
