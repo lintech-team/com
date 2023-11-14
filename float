@@ -1,18 +1,12 @@
-    private static int SPLASH_TIME_OUT = 7000;
-    private static int SPLASH_TIME_OUT2 = 2000;
-    private static int SPLASH_TIME_OUT3 = 5000;
-    Animation _translateAnimation, animFadein;
-    ImageView imgfade;
-    ImageView loading;
-    RelativeLayout relativeLayout;
-    TextView one;
-    private FirebaseAuth mAuth;
-    private TextView fname, lname, uname, mid, created, phone, eemail, emptymail;
-    final String TAG = this.getClass().getName().toUpperCase();
-    public FirebaseDatabase database;
-    public DatabaseReference mDatabase;
-    public String email;
-    public static final String USERS = "The Spotlight";
-    FirebaseAuth auth;
-    private SharedPreferences mPref;
-    private static final String PREF_NAME = "sp_name";
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <alpha
+        android:duration="5000"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"/>
+
+
+</set>
+
+
