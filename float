@@ -1,1 +1,32 @@
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
+        new Handler().postDelayed((Runnable) () -> {
+            imgfade = (ImageView) findViewById(R.id.welcm);
+            animFadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+            imgfade.setVisibility(View.VISIBLE);
+            imgfade.startAnimation(animFadein);
+            one.startAnimation(animFadein);
+            relativeLayout.setVisibility(View.VISIBLE);
+            //checking if user is logged in
+            if (mAuth.getCurrentUser() != null) {
+                updateUI(mAuth.getCurrentUser());
+            }
+
+
+        }, SPLASH_TIME_OUT2);
+
+        ConstraintLayout constraintLayout = findViewById(R.id.layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
+
+
+            <ImageView
+                android:id="@+id/welcm"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo32"
+                android:layout_above="@id/linear"
+                />
