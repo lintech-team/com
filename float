@@ -1,32 +1,23 @@
 
-        new Handler().postDelayed((Runnable) () -> {
-            imgfade = (ImageView) findViewById(R.id.welcm);
-            animFadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
-            imgfade.setVisibility(View.VISIBLE);
-            imgfade.startAnimation(animFadein);
-            one.startAnimation(animFadein);
-            relativeLayout.setVisibility(View.VISIBLE);
-            //checking if user is logged in
-            if (mAuth.getCurrentUser() != null) {
-                updateUI(mAuth.getCurrentUser());
-            }
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
 
 
-        }, SPLASH_TIME_OUT2);
+ one = findViewById(R.id.txt1);
+        one.setText("Seventh-day\n"+"Adventist Church\n"+"NEWLIFE");
 
-        ConstraintLayout constraintLayout = findViewById(R.id.layout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();
-
-
-
-            <ImageView
-                android:id="@+id/welcm"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/logo32"
-                android:layout_above="@id/linear"
-                />
+        new Handler().postDelayed(() -> {
+            Intent homeIntent = new Intent(Startup.this, Nav.class);
+            startActivity(homeIntent);
+            //overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            finish();
+        }, SPLASH_TIME_OUT);
